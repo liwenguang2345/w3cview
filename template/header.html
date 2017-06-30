@@ -1,0 +1,41 @@
+<div class="header">
+    <div class="block_header">
+      <div class="logo"><a href="<{changeurl url='index.php' site_rewrite=$site_rewrite}>"><img src="<{$site_logo}>" width="505" height="74" border="0" alt="logo" /></a></div>
+
+<div class="Twitter">
+
+<{if $smarty.cookies.username eq ''}>
+    
+    <{if $site_qq eq '1'}>
+    	<a href="index.php?login=qq" title="QQ帐号登录"><img src="/template/images/qq.png" border="0" /></a>
+    <{else}>
+    	<form action="<{changeurl url='index.php?mod=login&op=send' site_rewrite=$site_rewrite}>" method="post">
+        用户名：<input type="text" name="username" style="width:100px;" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="<{changeurl url='index.php?mod=register' site_rewrite=$site_rewrite}>" class="membercenter">注  册</a><br />
+        密&nbsp;&nbsp;码：<input type="password" name="password" style="width:100px;" />
+        <button class="button" type="submit">登录</button>
+    	</form>
+    <{/if}>
+    
+<{else}>
+        <span class="username"><{$username}></span>&nbsp;&nbsp;&nbsp;
+        <a href="<{changeurl url='index.php?mod=logout' site_rewrite=$site_rewrite}>" class="membercenter">退  出</a><br />
+        <a href="<{changeurl url='index.php?mod=info&op=edit' site_rewrite=$site_rewrite}>" class="membercenter">修改资料</a>&nbsp;&nbsp;&nbsp;
+        <a href="<{changeurl url='index.php?mod=pass&op=edit' site_rewrite=$site_rewrite}>" class="membercenter">修改密码</a>
+<{/if}>
+
+</div>
+
+      <div class="clr"></div>
+      <div class="menu" style="position:relative">
+        <ul>
+        
+          <{foreach item=menu from=$menu}>
+          <li><a href="<{changeurl url=$menu.url site_rewrite=$site_rewrite}>"><{$menu.title}></a></li>
+          <{/foreach}>
+
+        </ul>
+		
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>

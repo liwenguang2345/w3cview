@@ -1,0 +1,27 @@
+<div class="News">
+        <h2>成功案例</h2>
+         
+         <div style="height:10px;"></div>
+         
+       <{foreach item=homeexample from=$homeexample}>
+        
+        <div class="bg"></div>
+<div class="pp">
+		<div class="img">
+        <a href="<{changeurl url='index.php?mod=example&op=detail&id=' site_rewrite=$site_rewrite id=$homeexample.id}>" target="_blank">
+        <img border="0" src="<{$homeexample.image}>" width="58" height="58"></a></div>
+		<div class="msg">
+        	<p>
+            <a href="<{changeurl url='index.php?mod=example&op=detail&id=' site_rewrite=$site_rewrite id=$homeexample.id}>" target="_blank">
+             <{$homeexample.title|truncate:18:"...":true}></a></p>
+            <{$homeexample.note|truncate:60:"...":true}>
+        </div>
+        <div class="hr2" style="height:30px;"></div>
+</div>
+	
+    <{/foreach}>
+
+        <p><a href="<{changeurl url='index.php?mod=example&op=list' site_rewrite=$site_rewrite}>">+ more</a></p>
+        <p></p>
+      </div>
+    

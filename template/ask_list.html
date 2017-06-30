@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>答疑解惑 <{$site_title}></title>
+<meta name="Description" content="答疑解惑 <{$site_description}>" />
+<meta name="keywords" content="答疑解惑 <{$site_keywords}>" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/template/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+  <{include file="header.html"}>
+  <div class="slider2">
+    <div class="slice12">
+      <h2>答疑解惑 </h2>
+    </div>
+  </div>
+  <div class="clr"></div>
+  <div class="body">
+    <div class="body_resize">
+      <{include file="left.html"}>
+      <div class="Welcome">
+        
+        <{foreach item=list from=$list}>
+        
+        <div class="bg"></div>
+        <p><strong>
+        	<a href="<{changeurl url='index.php?mod=ask&op=detail&id=' site_rewrite=$site_rewrite id=$list.id}>" target="_blank">
+            <{$list.title}></a></strong></p>
+    	<p><{$list.note|truncate:200:"...":true}></p>
+
+		<{/foreach}>
+ 
+      </div>
+      
+      <div style="font-size:12px; width:400px; margin-left:500px;">
+      	 <{$listnav}>
+       </div>
+      
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <{include file="footer.html"}>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>服务支持 <{$site_title}></title>
+<meta name="Description" content="服务支持 <{$site_description}>" />
+<meta name="keywords" content="服务支持 <{$site_keywords}>" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/template/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+  <!--header-->
+  <{include file="header.html"}>
+  <!--header-->
+  <div class="slider2">
+    <div class="slice12">
+      <h2>服务支持</h2>
+    </div>
+  </div>
+  <div class="clr"></div>
+  <div class="body">
+    <div class="body_resize">
+    <{include file="left.html"}>
+    <div class="Welcome">
+      <h2>服务支持</h2>
+      
+      <div class="bg"></div>
+      <p>
+      <{foreach item=service from=$service}>
+            <{$service.note}>
+      <{/foreach}>
+          </p>
+    </div>
+    <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <!--footer-->
+  <{include file="footer.html"}>
+  <!--footer-->
+  
+</div>
+</body>
+</html>

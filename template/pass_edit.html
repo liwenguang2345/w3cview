@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>修改密码 <{$site_title}></title>
+<meta name="Description" content="修改密码 <{$site_description}>" />
+<meta name="keywords" content="修改密码 <{$site_keywords}>" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/template/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/template/js/jquery.js"></script>
+</head>
+<body>
+<div class="main">
+  <{include file="header.html"}>
+  <div class="slider2">
+    <div class="slice12">
+      <h2>修改密码 </h2>
+    </div>
+  </div>
+  <div class="clr"></div>
+  <div class="body">
+    <div class="body_resize">
+    <{include file="left.html"}>
+    <div class="Welcome">
+      <script language="javascript">
+	  function check()
+	  {
+	   	  if(document.getElementById("oldpass").value == "")
+		  {
+			  alert('请输入原密码');  
+			  document.getElementById("oldpass").focus();
+			  return false;
+		  }
+		  if(document.getElementById("password").value == "")
+		  {
+			  alert('请输入密码');  
+			  document.getElementById("password").focus();
+			  return false;
+		  }
+		  if(document.getElementById("confpass").value == "")
+		  {
+			  alert('请输入确认密码');  
+			  document.getElementById("confpass").focus();
+			  return false;
+		  }
+		  if(document.getElementById("password").value != document.getElementById("confpass").value)
+		  {
+			  alert('密码和确认密码不一致，请重新输入密码');  
+			  document.getElementById("password").focus();
+			  return false;
+		  }
+	  }
+	  </script>
+      <form action="<{changeurl url='index.php?mod=pass&op=save' site_rewrite=$site_rewrite}>" method="post" id="contactform" onsubmit="return check();">
+            <ol>
+              
+              <li>
+                <label for="subject">用户名：</label>
+                <input id="username" name="username" class="text" readonly="readonly" value="<{$username}>" />
+              </li>
+              <li>
+                <label for="message">原密码：</label>
+                <input id="oldpass" name="oldpass" type="password" class="text" />
+              </li>
+              <li>
+                <label for="message">新密码：</label>
+                <input id="password" name="password" type="password" class="text" />
+              </li>
+              <li>
+                <label for="message">确认密码：</label>
+                <input id="confpass" name="confpass" type="password" class="text" />
+              </li>
+              <li class="buttons">
+                <input type="image" name="imageField" id="imageField" src="/template/images/send.gif" />
+              </li>
+          </ol>
+        </form>
+    </div>
+    <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <{include file="footer.html"}>
+</div>
+</body>
+</html>

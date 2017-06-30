@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><{$site_title}></title>
+<meta name="Description" content="<{$site_description}>" />
+<meta name="keywords" content="<{$site_keywords}>" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/template/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/template/js/jquery.js"></script>
+<script type="text/javascript" src="/template/js/easySlider1.5.js"></script>
+<script type="text/javascript" charset="utf-8">
+// <![CDATA[
+$(document).ready(function(){	
+	$("#slider").easySlider({
+		controlsBefore:	'<p id="controls">',
+		controlsAfter:	'</p>',
+		auto: true, 
+		continuous: true
+	});	
+});
+// ]]>
+</script>
+<style type="text/css">
+#slider { margin:0; padding:0; list-style:none; }
+#slider ul,
+#slider li { margin:0; padding:0; list-style:none; }
+/* 
+    define width and height of list item (slide)
+    entire slider area will adjust according to the parameters provided here
+*/
+#slider li { width:960px; height:348px; overflow:hidden; }
+p#controls { margin:0; position:relative; }
+#prevBtn,
+#nextBtn { display:block; margin:0; overflow:hidden; width:13px; height:28px; position:absolute; left: -13px; top:-210px; }
+#nextBtn { left:960px; }
+#prevBtn a { display:block; width:13px; height:28px; background:url(/template/images/l_arrow.gif) no-repeat 0 0; }
+#nextBtn a { display:block; width:13px; height:28px; background:url(/template/images/r_arrow.gif) no-repeat 0 0; }
+</style>
+</head>
+<body>
+<div class="main">
+  <!--header-->
+  <{include file="header.html"}>
+  <!--header-->
+  <!--slider-->
+  <div class="slider">
+    <div class="slice1">
+      <div class="slice2" id="slider">
+        <ul>       
+        
+        <{foreach item=indextop from=$indextop}>
+        
+          <li>
+            <div>
+              <p class="img">
+              <a href="<{changeurl url='index.php?mod=example&op=detail&id=' site_rewrite=$site_rewrite id=$indextop.id}>" target="_blank">
+              <img src="<{$indextop.image}>" alt="screen 1" border="0" width="539" height="292" /></a></p>
+              <h2><br /><{$indextop.title}><br />
+               
+                </h2>
+              <p><{$indextop.note|truncate:94:"...":true}></p>
+              <p><br />
+              <a href="<{changeurl url='index.php?mod=example&op=detail&id=' site_rewrite=$site_rewrite id=$indextop.id}>" target="_blank">
+              <img src="/template/images/more_information.gif" width="133" height="30" border="0" alt="img" /></a></p>
+            </div>
+          </li>
+          
+          <{/foreach}>          
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--slider-->
+  <div class="clr"></div>
+  <!--body-->
+  <div class="body">
+    <div class="topi">
+      <div class="blogi">
+        <h2 class="what">关于我们</h2>
+        <p><strong>W3CVIEW</strong>视野CMS系统是由W3CVIEW创作小组开发的，小组除对系统的持续更新外还承接PHP、NET和ASP软件开发项目。
+          </p>
+        <p>
+        <a href="<{changeurl url='index.php?mod=about' site_rewrite=$site_rewrite}>">more</a></p>
+      </div>
+      <div class="blogi">
+        <h2 class="Our">联系我们</h2>
+        <p><b>W3CVIEW系统支持 承接各类网站和软件项目</b></p>
+        <p style="font-size:16px;"><b>QQ：949017343&nbsp;&nbsp;1649956900</b></p>
+        <p><a href="<{changeurl url='index.php?mod=contact' site_rewrite=$site_rewrite}>">more</a></p>
+      </div>
+      <div class="blogi">
+        <h2 class="work">客户留言</h2>
+		<p><b>W3CVIEW创作小组为您服务</b></p>
+        <p><a href="<{changeurl url='index.php?mod=guestbook' site_rewrite=$site_rewrite}>"><img src="/template/images/but_data.png" border="0" /></a></p>
+        
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="body_resize">
+      <div class="News">
+        <h2>成功案例</h2>
+         
+         <div style="height:10px;"></div>
+       
+       <{foreach item=example from=$example}>
+        
+        <div class="bg"></div>
+<div class="pp">
+		<div class="img">
+        <a href="<{changeurl url='index.php?mod=example&op=detail&id=' site_rewrite=$site_rewrite id=$example.id}>" target="_blank">
+        <img border="0" src="<{$example.image}>" width="58" height="58"></a></div>
+		<div class="msg">
+        	<p>
+            <a href="<{changeurl url='index.php?mod=example&op=detail&id=' site_rewrite=$site_rewrite id=$example.id}>" target="_blank">
+        	<{$example.title|truncate:18:"...":true}></a></p>
+            <{$example.note|truncate:60:"...":true}>
+        </div>
+        <div class="hr2" style="height:30px;"></div>
+</div>
+	
+       <{/foreach}>
+
+        <p>
+        <a href="<{changeurl url='index.php?mod=example&op=list' site_rewrite=$site_rewrite}>">
+            + more</a></p>
+        <p></p>
+      </div>
+      <div class="Welcome">
+	  <p> </p>
+		        <h2>答疑解惑</h2>
+                <div class="bg"></div>
+        <ul style="width:90%">
+          
+          <{foreach item=ask from=$ask}>
+          <li>
+          <a href="<{changeurl url='index.php?mod=ask&op=detail&id=' site_rewrite=$site_rewrite id=$ask.id}>" target="_blank">
+          <{$ask.title}></a></li>
+          <{/foreach}>
+          
+        </ul>
+
+	  <p style="height:20px; clear:both"></p>
+        <h2>&nbsp;</h2>
+
+		        
+      </div>
+	  <div style="height:20px; font-size:1px; line-height:20px; clear:both"> </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <!--body-->
+  <!--footer-->
+  <{include file="footer.html"}>
+  <!--footer-->
+</div>
+</body>
+</html>

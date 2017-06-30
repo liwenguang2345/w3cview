@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>修改资料 <{$site_title}></title>
+<meta name="Description" content="修改资料 <{$site_description}>" />
+<meta name="keywords" content="修改资料 <{$site_keywords}>" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/template/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/template/js/jquery.js"></script>
+</head>
+<body>
+<div class="main">
+  <{include file="header.html"}>
+  <div class="slider2">
+    <div class="slice12">
+      <h2>修改资料 </h2>
+    </div>
+  </div>
+  <div class="clr"></div>
+  <div class="body">
+    <div class="body_resize">
+    <{include file="left.html"}>
+    <div class="Welcome">
+      
+      <form action="<{changeurl url='index.php?mod=info&op=save' site_rewrite=$site_rewrite}>" method="post" id="contactform">
+            <ol>
+              
+              <li>
+                <label for="subject">用户名：</label>
+                <input id="username" name="username" class="text" readonly="readonly" value="<{$username}>" />
+              </li>
+              <li>
+                <label for="message">Email：</label>
+                <input id="email" name="email" type="text" class="text" value="<{$email}>" />
+              </li>
+              <li class="buttons">
+                <input type="image" name="imageField" id="imageField" src="/template/images/send.gif" />
+              </li>
+          </ol>
+        </form>
+    </div>
+    <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <{include file="footer.html"}>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteRule ^([a-zA-Z]{1,})/([a-zA-Z]{1,})/([0-9]{1,})/([0-9]{1,})$ index.php?mod=$1&op=$2&id=$3&pid=$4
+RewriteRule ^([a-zA-Z]{1,})/([a-zA-Z]{1,})/([0-9]{1,})$ index.php?mod=$1&op=$2&id=$3
+RewriteRule ^([a-zA-Z]{1,})/([a-zA-Z]{1,})$ index.php?mod=$1&op=$2
+RewriteRule ^([a-zA-Z]{1,})$ index.php?mod=$1
+RewriteRule ^index$ index.php
